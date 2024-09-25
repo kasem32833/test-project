@@ -1,6 +1,35 @@
+import {  useContext, useRef } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProviders";
+
+
 
 const Login = () => {
+
+  const {logIn} = useContext(AuthContext);
+
+
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+
+  const handeleLogin = (e)=>{
+    e.preventDefault()
+
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+
+    logIn(email, password)
+    .then(result =>{
+      console.log(result.user.email);
+    })
+    .catch(error =>{
+      console.log(error);
+    })
+
+    console.log('User login Successfully',  password);
+
+  }
+
   return (
     <div>
       <div className="hero bg-base-200 min-h-screen">
@@ -18,6 +47,7 @@ const Login = () => {
                   <span className="label-text">Email</span>
                 </label>
                 <input
+                  ref={emailRef}
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
@@ -29,6 +59,7 @@ const Login = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
+                  ref={passwordRef}
                   type="password"
                   placeholder="password"
                   className="input input-bordered"
@@ -41,7 +72,7 @@ const Login = () => {
                 </label> 
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button onClick={handeleLogin} className="btn btn-primary">Login</button>
               </div>
             </form>
           </div>

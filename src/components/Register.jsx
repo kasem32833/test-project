@@ -1,6 +1,32 @@
-import React from "react";
+
+import React, { useContext, useRef } from "react";
+import { AuthContext } from "../providers/AuthProviders";
 
 const Register = () => {
+  const {register} = useContext(AuthContext);
+
+  const userNameRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  const handleRegister = (e)=>{
+    e.preventDefault();
+    const userName = userNameRef.current.value
+    const email = emailRef.current.value
+    const password = passwordRef.current.value
+
+    console.log(userName, email, password, );
+
+    
+    register(userName, email, password)
+    .then(result =>{
+      console.log(result.user);
+    })
+    .catch(error =>{
+      console.log(error);
+    })
+
+  }
   return (
     <div>
       <div className="hero bg-base-200 min-h-screen">
@@ -12,12 +38,13 @@ const Register = () => {
             </p>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form className="card-body">
+            <form onSubmit={handleRegister} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
                 </label>
                 <input
+                  ref={userNameRef}
                   type="text"
                   placeholder="Type Your name Here"
                   className="input input-bordered"
@@ -29,6 +56,7 @@ const Register = () => {
                   <span className="label-text">Email</span>
                 </label>
                 <input
+                ref={emailRef}
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
@@ -40,6 +68,7 @@ const Register = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input
+                ref={passwordRef}
                   type="password"
                   placeholder="Type your password"
                   className="input input-bordered"
