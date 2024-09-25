@@ -1,18 +1,29 @@
-import { NavLink } from "react-router-dom";
+import React from "react";
 
-const Login = () => {
+const Register = () => {
   return (
     <div>
       <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content flex-col lg:flex-row  mx-auto">
+        <div className="hero-content flex-col lg:flex-row">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Sign In to Start Your Business</h1>
+            <h1 className="text-5xl font-bold">Register now!</h1>
             <p className="py-6">
-              If your don't have account please <NavLink to="/register" className="text-violet-700">Register</NavLink> Here
+              Register and Stay connected with us. Register and Stay connected with usRegister and Stay connected with us
             </p>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form className="card-body">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Type Your name Here"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -30,18 +41,14 @@ const Login = () => {
                 </label>
                 <input
                   type="password"
-                  placeholder="password"
+                  placeholder="Type your password"
                   className="input input-bordered"
                   required
                 />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
               </div>
+
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-primary">Register</button>
               </div>
             </form>
           </div>
@@ -51,4 +58,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

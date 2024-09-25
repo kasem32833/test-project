@@ -1,18 +1,15 @@
-import { Outlet } from "react-router-dom"
-
-
-
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
+import Banner from "./components/Banner";
 
 function App() {
-
-
   return (
-    <>
-        <p>Hello world</p>
-        <Outlet></Outlet>
-   
-    </>
-  )
+    <div className="max-w-7xl mx-auto">
+      <Header></Header>
+      <Banner></Banner>
+      <Outlet></Outlet>
+    </div>
+  );
 }
 
-export default App
+export default App;
