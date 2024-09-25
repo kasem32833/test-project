@@ -1,12 +1,14 @@
 import {  useContext, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
+import { FaGoogle } from "react-icons/fa6";
+
 
 
 
 const Login = () => {
 
-  const {logIn} = useContext(AuthContext);
+  const {logIn, googleLogin} = useContext(AuthContext);
 
 
   const emailRef = useRef(null);
@@ -65,16 +67,18 @@ const Login = () => {
                   className="input input-bordered"
                   required
                 />
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label> 
+                
               </div>
               <div className="form-control mt-6">
                 <button onClick={handeleLogin} className="btn btn-primary">Login</button>
               </div>
+              
             </form>
+            <div className="flex gap-1 justify-center items-center mb-6">
+                <button onClick={googleLogin}>Login With Google</button>
+                <FaGoogle className="text-red-500"></FaGoogle>
+              </div>
+
           </div>
         </div>
       </div>

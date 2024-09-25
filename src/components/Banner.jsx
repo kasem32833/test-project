@@ -4,8 +4,12 @@ import about2 from "../assets/about-2.png";
 
 // React icons
 import { MdDesignServices } from "react-icons/md";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProviders";
 
 const Banner = () => {
+
+  const {user} = useContext(AuthContext)
   return (
     <div className="px-6 mx-auto max-w-7xl ">
       <div className="relative">
@@ -71,17 +75,57 @@ const Banner = () => {
         </div>
       </div>
       {/* service section */}
-      <div className="flex justify-between mt-20  bg-slate-900 ">
-        <div className="grid grid-cols-2 w-1/2">
-          <div className="bg-white rounded flex flex-col text-center">
+      <div className="flex justify-between mt-20  bg-slate-900 py-20 ">
+        <div className="grid gap-10 grid-cols-2 w-1/2">
+          <div className="bg-white rounded space-y-6 flex flex-col justify-center items-center text-center">
+            <div className=" bg-red-500 w-[60px] h-[60px] flex justify-center items-center rounded-full -mt-[30px]">
             <MdDesignServices></MdDesignServices>
+            </div>
             <h4>UI/UX</h4>
 
-            <p>
+            
+            <p className="pb-6">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
               commodi accusantium eum nobis rem iste minus at aliquid? Animi
-              sequi corporis vel aliquam doloribus repellendus assumenda,
-              perspiciatis fugiat maiores aperiam?
+            
+            </p>
+          </div>
+          <div className="bg-white rounded space-y-6 flex flex-col justify-center items-center text-center">
+            <div className=" bg-red-500 w-[60px] h-[60px] flex justify-center items-center rounded-full -mt-[30px]">
+            <MdDesignServices></MdDesignServices>
+            </div>
+            <h4>UI/UX</h4>
+
+            <p className="pb-6">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+              commodi accusantium eum nobis rem iste minus at aliquid? Animi
+            
+            </p>
+          </div>
+          <div className="bg-white rounded space-y-6 flex flex-col justify-center items-center text-center">
+            <div className=" bg-red-500 w-[60px] h-[60px] flex justify-center items-center rounded-full -mt-[30px]">
+            <MdDesignServices></MdDesignServices>
+            </div>
+            <h4>UI/UX</h4>
+
+            
+            <p className="pb-6">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+              commodi accusantium eum nobis rem iste minus at aliquid? Animi
+            
+            </p>
+          </div>
+          <div className="bg-white rounded space-y-6 flex flex-col justify-center items-center text-center">
+            <div className=" bg-red-500 w-[60px] h-[60px] flex justify-center items-center rounded-full -mt-[30px]">
+            <MdDesignServices></MdDesignServices>
+            </div>
+            <h4>UI/UX</h4>
+
+           
+            <p className="pb-6">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+              commodi accusantium eum nobis rem iste minus at aliquid? Animi
+            
             </p>
           </div>
         </div>
