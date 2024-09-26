@@ -23,7 +23,7 @@ const Header = () => {
             <div>
                 <ul>
                 <li>
-                  <button className="text-white" onClick={handleLogOut}>Log Out</button>
+                  <button className="" onClick={handleLogOut}>Log Out</button>
                 </li>
               </ul>
             </div>
