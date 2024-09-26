@@ -1,5 +1,5 @@
 import {  useContext, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
 import { FaGoogle } from "react-icons/fa6";
 
@@ -8,8 +8,9 @@ import { FaGoogle } from "react-icons/fa6";
 
 const Login = () => {
 
-  const {logIn, googleLogin} = useContext(AuthContext);
+  const {logIn, user, googleLogin, loading} = useContext(AuthContext);
 
+  const navigate = useNavigate()
 
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
@@ -23,6 +24,7 @@ const Login = () => {
     logIn(email, password)
     .then(result =>{
       console.log(result.user.email);
+      navigate('/dashboard')
     })
     .catch(error =>{
       console.log(error);

@@ -8,6 +8,7 @@ import Register from './components/Register.jsx'
 import AuthProviders from './providers/AuthProviders.jsx'
 import Home from './components/layouts/Home.jsx'
 import Dashboard from './components/layouts/Dashboard.jsx'
+import PrivateRoutes from './routes/PrivateRoutes.jsx'
 
 const router = createBrowserRouter([
   {
@@ -24,14 +25,14 @@ const router = createBrowserRouter([
   },
   {
     path:"/dashboard",
-    element:<Dashboard></Dashboard>
+    element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
   }
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
       <AuthProviders>
-        <div className='max-w-screen-xl mx-auto'>
+        <div className=''>
         <RouterProvider router={router}></RouterProvider>
         </div>
         

@@ -1,7 +1,7 @@
 
 import React, { useContext, useRef } from "react";
 import { AuthContext } from "../providers/AuthProviders";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const {register, user} = useContext(AuthContext);
@@ -39,9 +39,10 @@ const Register = () => {
             <h1 className="text-5xl font-bold">Register now!</h1>
             <p className="py-6">
               Register and Stay connected with us. Register and Stay connected with usRegister and Stay connected with us
+              Already Have an account please <NavLink className="text-violet-700 font-bold " to="/login">Log In</NavLink>
             </p>
           </div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl flex">
             <form onSubmit={handleRegister} className="card-body">
               <div className="form-control">
                 <label className="label">
