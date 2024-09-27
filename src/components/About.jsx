@@ -4,7 +4,7 @@ import about2 from "../assets/about-2.png";
 
 const About = () => {
   return (
-    <div className="mt-20 flex flex-row justify-between gap-10 w-full mx-0 px-0">
+    <div className="mt-20 flex flex-row justify-between gap-10 w-[1200px] mx-auto px-0">
       <div className="w-1/2">
         <h3 className="text-xl font-bold">
           Introduction To the Best{" "}
@@ -32,7 +32,7 @@ const About = () => {
           error beatae hic doloremque tempora dignissimos quod corrupti earum
           
         </p>
-        <button className="btn btn-secondary mt-6">Hire Us</button>
+        <button className="bg-red-500 rounded-md py-2 w-40 mt-4 text-white">Hire Us</button>
       </div>
       <div className="w-1/2">
         <div className="relative ">

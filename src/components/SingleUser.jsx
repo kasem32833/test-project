@@ -1,25 +1,44 @@
 import React from "react";
+import { ImBin2 } from "react-icons/im";
+import { FiEdit } from "react-icons/fi";
 
-const SingleUser = ({user}) => {
-
-  const {name, id, email}  = user;
+const SingleUser = ({ user }) => {
+  const { name, id, email } = user;
   return (
-    <div className="card bg-base-100 w-96 shadow-xl">
-      <figure className="px-10 pt-10">
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-          className="rounded-xl"
-        />
-      </figure>
-      <div className="card-body items-center text-center">
-        <h2 className="card-title">Name: {name}</h2>
-        <p>Email: {email}</p>
-        <div className="card-actions">
-          <button className="btn btn-primary">Read More</button>
-        </div>
-      </div>
-    </div>
+      <tr>
+        <th>
+          <label>
+            <input type="checkbox" className="checkbox" />
+          </label>
+        </th>
+        <td>
+          <div className="flex items-center gap-3">
+            <div className="avatar">
+              <div className="mask mask-squircle h-12 w-12">
+                <img
+                  src="https://img.daisyui.com/images/profile/demo/2@94.webp"
+                  alt="Avatar Tailwind CSS Component"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="font-bold">Hart Hagerty</div>
+              <div className="text-sm opacity-50">United States</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          Zemlak, Daniel and Leannon
+          <br />
+          <span className="badge badge-ghost badge-sm">
+            Desktop Support Technician
+          </span>
+        </td>
+        <td>Purple</td>
+        <th>
+          <button className="btn btn-ghost btn-xs">details</button>
+        </th>
+      </tr>
   );
 };
 

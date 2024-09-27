@@ -1,36 +1,43 @@
-import React, { useContext, } from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
+import logo from "../assets/logo.png";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
 
-    const {user, logOut} = useContext(AuthContext);
+  console.log(user);
 
-    console.log(user);
-
-    const handleLogOut = ()=>{
-      logOut();
-    }
+  const handleLogOut = () => {
+    logOut();
+  };
 
   return (
-    <div className="w-[1200px] mx-auto  ">
-      <div className="navbar bg-base-100">
-        <div className="flex-1">
-          <NavLink to="/" className="text-violet-700 text-2xl">Design Hub</NavLink>
-        </div>
-        {
-            user ? <div className="flex-none gap-2">
-            <div>
+    <div className="bg-stone-900 py-4">
+      <div className="w-[1200px] mx-auto bg-stone-900 ">
+        <div className="navbar ">
+          <div className="flex-1 ">
+            <NavLink to="/" className="text-white text-2xl">
+              <img src={logo} alt="" />
+            </NavLink>
+          </div>
+          {user ? (
+            <div className="flex-none gap-2 text-white">
+              <div>
                 <ul>
-                <li>
-                  <button className="" onClick={handleLogOut}>Log Out</button>
-                </li>
-              </ul>
+                  <li>
+                    <button className="" onClick={handleLogOut}>
+                      Log Out
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div> : <NavLink to="/login">Login</NavLink>
-        }
+          ) : (
+            <NavLink className="text-white bg-red-500 rounded-full px-4 py-2" to="/login">Contact Us</NavLink>
+          )}
+        </div>
       </div>
-      
     </div>
   );
 };
