@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
 import logo from "../assets/logo.png";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const location = useLocation();
 
+  const currentPath = location.pathname;
+  console.log(currentPath);
   console.log(user);
 
   const handleLogOut = () => {
@@ -13,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-stone-900 py-4">
+    <div className="bg-stone-900 py-4 fixed w-full left-0 top-0 z-10">
       <div className="w-[1200px] mx-auto bg-stone-900 ">
         <div className="navbar ">
           <div className="flex-1 ">
@@ -26,15 +29,26 @@ const Header = () => {
               <div>
                 <ul>
                   <li>
-                    <button className="" onClick={handleLogOut}>
+                    <button className="mr-6" onClick={handleLogOut}>
                       Log Out
                     </button>
+                    {
+                      currentPath === "/dashboard" ?  <NavLink to="/" >
+                      Home
+                    </NavLink> : <NavLink to="/dashboard" >
+                      Dashboard
+                    </NavLink>
+                    }
+                    
                   </li>
                 </ul>
               </div>
             </div>
           ) : (
+            
+
             <NavLink className="text-white bg-red-500 rounded-full px-4 py-2" to="/login">Contact Us</NavLink>
+            
           )}
         </div>
       </div>

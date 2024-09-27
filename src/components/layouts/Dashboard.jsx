@@ -9,7 +9,7 @@ const Dashboard = () => {
 
     return (
       
-        <div className='h-screen'>
+        <div className='h-screen mt-24'>
             <Header></Header>
            
             <div className='flex justify-between'>

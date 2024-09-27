@@ -36,12 +36,12 @@ const Login = () => {
 
   return (
     <div>
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero bg-stone-400 min-h-screen">
         <div className="hero-content flex-col lg:flex-row  mx-auto">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Sign In to Start Your Business</h1>
+            <h1 className="text-5xl text-white font-bold">Sign In to Start Your Business</h1>
             <p className="py-6">
-              If your don't have account please <NavLink to="/register" className="text-violet-700">Register</NavLink> Here
+              If your don't have account please <NavLink to="/register" className="text-stone-800 bg-white px-4 py-2 w-40 rounded-full">Register</NavLink> Here
             </p>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

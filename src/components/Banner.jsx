@@ -19,10 +19,11 @@ const Banner = () => {
       backgroundPosition: "center",
       height: "100vh",
       width:"100vw",
-      position: "relative"
+      position: "relative",
+      marginTop: "80px"
 
     }} >
-      <div className="bg-black absolute left-0 top-0 w-full h-full opacity-85 text-white flex flex-col justify-center items-center gap-8 px-32">
+      <div className="bg-black absolute left-0 top-0 w-full h-full opacity-85 text-white flex flex-col justify-center items-center gap-8 px-32 ">
           <p>
             welcome To <span className="text-red-500">Design Hub</span>
           </p>

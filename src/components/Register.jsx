@@ -33,13 +33,13 @@ const Register = () => {
   }
   return (
     <div>
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero bg-stone-400 min-h-screen">
         <div className="hero-content flex-col lg:flex-row">
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left text-white">
             <h1 className="text-5xl font-bold">Register now!</h1>
             <p className="py-6">
               Register and Stay connected with us. Register and Stay connected with usRegister and Stay connected with us
-              Already Have an account please <NavLink className="text-violet-700 font-bold " to="/login">Log In</NavLink>
+              Already Have an account please <NavLink to="/login" className="text-stone-800 bg-white px-4 py-2 w-40 rounded-full mx-1 ">Log In</NavLink> Here
             </p>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl flex">
