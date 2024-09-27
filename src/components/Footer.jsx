@@ -6,13 +6,14 @@ import { IoLogoYoutube } from "react-icons/io";
 import { CiLocationOn } from "react-icons/ci";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa6";
+import FooterBottom from "./FooterBottom";
 
 
 
 
 const Footer = () => {
     return (
-        <div style={{margin:0, }} className="bg-stone-800 text-gray-100 px-8 mx-auto ">
+        <div className="bg-stone-800 text-gray-100 px-8 mx-auto ">
             <div className="flex justify-between p-8">
                 <div className="w-4/12 flex flex-col space-y-4">
                     <div><h3 className="text-xl font-bold">Design Hub</h3></div>
@@ -52,14 +53,7 @@ const Footer = () => {
 
             </div>
             {/* footer bottom */}
-            <div className="flex justify-between  py-4 px-8">
-                <p>Copyright &copy; Abul Kasem 2024 All right reserved</p>
-                <div className="flex gap-4">
-                    <NavLink>Website Terms</NavLink>
-                    <NavLink>Privacy Policy</NavLink>
-                    <NavLink>Cookies Policy</NavLink>
-                </div>
-            </div>
+            <FooterBottom></FooterBottom>
         </div>
     );
 };

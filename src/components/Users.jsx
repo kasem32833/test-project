@@ -6,7 +6,14 @@ const Users = () => {
   const users = useSelector((state) => state.users);
 
   return (
-    <div className="grid gap-4  my-8">
+    <div className="">
+      <div className="w-[1200px] mx-auto flex justify-around items-center pt-4">
+        <h3 className="text-xl mb-2">Our Valuable Customers</h3>
+        <button className="bg-stone-900 text-white px-4 py-2  rounded-full">
+          +Add New User
+        </button>
+      </div>
+
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
