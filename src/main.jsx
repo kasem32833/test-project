@@ -11,12 +11,14 @@ import Dashboard from "./components/layouts/Dashboard.jsx";
 import PrivateRoutes from "./routes/PrivateRoutes.jsx";
 import { Provider } from "react-redux";
 import store from "./app/store.js";
+import Create from "./components/Create.jsx";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    
   },
   {
     path: "/login",
@@ -33,7 +35,14 @@ const router = createBrowserRouter([
         <Dashboard></Dashboard>
       </PrivateRoutes>
     ),
+  
   },
+  {
+  
+      path: "/create",
+      element:<Create></Create>
+  
+  }
 ]);
 
 

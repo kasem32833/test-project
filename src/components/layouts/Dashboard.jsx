@@ -4,6 +4,7 @@ import Footer from '../Footer';
 import Sidebar from '../Sidebar';
 import { AuthContext } from '../../providers/AuthProviders';
 import Users from '../Users';
+import { Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
 
@@ -11,7 +12,7 @@ const Dashboard = () => {
       
         <div className='h-screen mt-24'>
             <Header></Header>
-           
+            
             <div className='flex justify-between'>
                 <Sidebar></Sidebar>
                 <Users></Users>

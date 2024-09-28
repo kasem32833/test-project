@@ -1,7 +1,7 @@
 export  const data =  [
 
     {
-        "id": 5,
+        "id": 1,
         "name": "David Lee",
         "email": "david.lee@email.com",
         "username": "davidlee99",
@@ -14,7 +14,7 @@ export  const data =  [
         "following": 450
       },
       {
-        "id": 6,
+        "id": 2,
         "name": "Jessica Davis",
         "email": "jessica.davis@email.com",
         "username": "jessdavis",
@@ -27,7 +27,7 @@ export  const data =  [
         "following": 230
       },
       {
-        "id": 7,
+        "id": 3,
         "name": "Robert Brown",
         "email": "robert.brown@email.com",
         "username": "robbrown",
@@ -40,7 +40,7 @@ export  const data =  [
         "following": 380
       },
       {
-        "id": 8,
+        "id": 4,
         "name": "Anna Wilson",
         "email": "anna.wilson@email.com",
         "username": "annawilson",
@@ -53,7 +53,7 @@ export  const data =  [
         "following": 320
       },
       {
-        "id": 9,
+        "id": 5,
         "name": "James Miller",
         "email": "james.miller@email.com",
         "username": "jamesmiller",
@@ -66,7 +66,7 @@ export  const data =  [
         "following": 550
       },
       {
-        "id": 10,
+        "id": 6,
         "name": "Sophia Martinez",
         "email": "sophia.martinez@email.com",
         "username": "sophiamartinez",
