@@ -12,6 +12,9 @@ import PrivateRoutes from "./routes/PrivateRoutes.jsx";
 import { Provider } from "react-redux";
 import store from "./app/store.js";
 import Create from "./components/Create.jsx";
+import Users from "./components/Users.jsx";
+import Edit from "./components/Edit.jsx";
+import Delete from "./components/Delete.jsx";
 
 
 const router = createBrowserRouter([
@@ -28,19 +31,38 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register></Register>,
   },
-  {
-    path: "/dashboard",
-    element: (
-      <PrivateRoutes>
-        <Dashboard></Dashboard>
-      </PrivateRoutes>
-    ),
+  // {
+  //   path: "/dashboard",
+  //   element: (
+  //     <PrivateRoutes>
+  //       <Dashboard></Dashboard>
+  //     </PrivateRoutes>
+  //   ),
   
-  },
+  // },
   {
   
-      path: "/create",
-      element:<Create></Create>
+      path: "/dashboard",
+      element: (<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>),
+      children: [
+        {
+        path:"/dashboard",
+        element: <Users></Users>
+        },
+        {
+        path:"/dashboard/crate",
+        element: <Create></Create>
+        },
+        {
+        path:"/dashboard/edit",
+        element: <Edit></Edit>
+        },
+        {
+        path:"/dashboard/delete",
+        element: <Delete></Delete>
+        }
+        
+      ]
   
   }
 ]);
@@ -48,7 +70,7 @@ const router = createBrowserRouter([
 
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  
     <Provider store={store}>
       <AuthProviders>
         <div className="">
@@ -56,5 +78,5 @@ createRoot(document.getElementById("root")).render(
         </div>
       </AuthProviders>
     </Provider>
-  </StrictMode>
+  
 );

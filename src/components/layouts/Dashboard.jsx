@@ -15,7 +15,7 @@ const Dashboard = () => {
             
             <div className='flex justify-between'>
                 <Sidebar></Sidebar>
-                <Users></Users>
+                <Outlet></Outlet>
             </div>
             
             <Footer></Footer>

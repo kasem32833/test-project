@@ -1,7 +1,9 @@
 import {  useContext, useRef } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
 import { FaGoogle } from "react-icons/fa6";
+import Swal from 'sweetalert2'
+
 
 
 
@@ -10,7 +12,9 @@ const Login = () => {
 
   const {logIn, user, googleLogin, loading} = useContext(AuthContext);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/"
 
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
@@ -23,15 +27,18 @@ const Login = () => {
 
     logIn(email, password)
     .then(result =>{
-      console.log(result.user.email);
-      navigate('/dashboard')
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "You Have successfully login",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      navigate(from, {replace: true});
     })
     .catch(error =>{
       console.log(error);
     })
-
-    console.log('User login Successfully',  password);
-
   }
 
   return (

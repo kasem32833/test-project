@@ -68,8 +68,8 @@ const Users = () => {
         </td>
         
         <th>
-          <button className="btn btn-ghost btn-xs"><ImBin2></ImBin2></button>
-          <button className="btn btn-ghost btn-xs"><FiEdit></FiEdit></button>
+          <NavLink to="/dashboard/delete" className="btn btn-ghost btn-xs"><ImBin2></ImBin2></NavLink>
+          <NavLink to="/dashboard/edit" className="btn btn-ghost btn-xs"><FiEdit></FiEdit></NavLink>
         </th>
       </tr>
             ))}

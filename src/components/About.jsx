@@ -1,14 +1,18 @@
 import about from "../assets/about.png";
 import about2 from "../assets/about-2.png";
-
+import SectionTitle from "../shared/SectinTitle";
 
 const About = () => {
   return (
     <div className="mt-20 flex flex-row justify-between gap-10 w-[1200px] mx-auto px-0">
       <div className="w-1/2">
-        <h3 className="text-xl font-bold">
-          Introduction To the Best{" "}
-          <span className="text-red-500">Digital Agency</span>
+        <p>About Design Hub</p>
+        <h3 className="text-4xl mb-4 font-bold">
+          Introduction To The Best
+          <span className="text-red-500">
+            <br />
+            Digital Agency
+          </span>
         </h3>
         <p className="text-justify">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
@@ -24,20 +28,17 @@ const About = () => {
           molestias minus nam dicta quia numquam voluptas, magnam fugiat
           accusamus eligendi dolore laboriosam aut quis cumque praesentium
           provident! Accusamus recusandae autem eius soluta voluptatem!
-          Molestias nobis magni soluta amet similique tenetur excepturi incidunt
-          tempora officia vel laboriosam optio quis sit aut nisi fugit sapiente
-          cum, mollitia aliquid. Quisquam id quae repellat, error minus quo,
-          odio possimus veritatis voluptatum ad hic nesciunt nobis cum modi odit
-          temporibus, illo nulla mollitia provident ipsam totam! A et illum eos
-          error beatae hic doloremque tempora dignissimos quod corrupti earum
-          
         </p>
-        <button className="bg-red-500 rounded-md py-2 w-40 mt-4 text-white">Hire Us</button>
+        <button className="bg-red-500 rounded-md py-2 w-40 mt-4 text-white">
+          Hire Us
+        </button>
       </div>
-      <div className="w-1/2">
+      <div className="w-1/2 ml-20">
         <div className="relative ">
-          <img className="w-100% " src={about} alt="" />
-          <img className="absolute left-0 -bottom-10" src={about2} alt="" />
+          <img className="w-100%  relative" src={about} alt="" />
+          <div className="absolute -left-10 -bottom-40">
+            <img className=" " src={about2} alt="" />
+          </div>
         </div>
       </div>
     </div>

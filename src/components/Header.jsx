@@ -47,7 +47,7 @@ const Header = () => {
           ) : (
             
 
-            <NavLink className="text-white bg-red-500 rounded-full px-4 py-2" to="/login">Contact Us</NavLink>
+            <NavLink className="text-white text-xl font-bold bg-red-500 rounded-full px-8 py-2  text-center" to="/login">Log In</NavLink>
             
           )}
         </div>
