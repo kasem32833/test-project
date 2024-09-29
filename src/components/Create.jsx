@@ -12,7 +12,6 @@ const Create = () => {
     const [clientEmail, setClientEmail] = useState();
     const dispatch = useDispatch();
     const users = useSelector((state) => state.users);
-
     const navigate = useNavigate()
 
     console.log(clientName, clientEmail);
@@ -24,7 +23,7 @@ const Create = () => {
             name: clientName,
             email: clientEmail,
         }))
-        navigate('/')
+        navigate('/dashboard')
     }
 
     

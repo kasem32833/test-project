@@ -9,7 +9,7 @@ const Users = () => {
 
 
   return (
-    <div className="">
+    <div className="w-1/2 mx-auto">
       <div className="w-[1200px] mx-auto flex justify-around items-center pt-4">
         <h3 className="text-xl mb-2">Our Valuable Customers</h3>
         <NavLink to="create" className="bg-stone-900 text-white px-4 py-2  rounded-full">
@@ -23,9 +23,7 @@ const Users = () => {
           <thead>
             <tr>
               <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
+                id
               </th>
               <th>Name</th>
               <th>Job</th>
@@ -40,7 +38,7 @@ const Users = () => {
             <tr>
         <th>
           <label>
-            <input type="checkbox" className="checkbox" />
+            {user.id}
           </label>
         </th>
         <td>
