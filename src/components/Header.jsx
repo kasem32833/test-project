@@ -8,9 +8,6 @@ const Header = () => {
   const location = useLocation();
 
   const currentPath = location.pathname;
-  console.log(currentPath);
-  console.log(user);
-
   const handleLogOut = () => {
     logOut();
   };
