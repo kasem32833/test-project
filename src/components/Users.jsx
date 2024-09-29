@@ -1,16 +1,24 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ImBin2 } from "react-icons/im";
 import { FiEdit } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
+import { deleteUser } from "../features/users/usersSlice";
+
+
 
 const Users = () => {
   const users = useSelector((state) => state.users);
+  const dispatch = useDispatch()
 
-  // console.log(users);
+  const handleDelete = (id)=>{
+      console.log(`Uaser Deleted:${id}`);
+      dispatch(deleteUser({id: id}))
+
+  }
 
   return (
-    <div className="w-1/2 mx-auto">
+    <div className="w-1/2 mx-auto min-h-screen">
       <div className="w-[1200px] mx-auto flex justify-around items-center pt-4">
         <h3 className="text-xl mb-2">Our Valuable Customers</h3>
         <NavLink
@@ -35,7 +43,7 @@ const Users = () => {
           </thead>
           <tbody>
               {
-                users.map(user => <tr>
+                users.map(user => <tr key={user.id}>
                   <th>
                     <label>{user.id}</label>
                   </th>
@@ -64,12 +72,12 @@ const Users = () => {
                   </td>
     
                   <th>
-                    <NavLink
-                      to="/dashboard/delete"
+                    <button
+                      onClick={()=>handleDelete(user.id)}
                       className="btn btn-ghost btn-xs"
                     >
                       <ImBin2></ImBin2>
-                    </NavLink>
+                    </button>
                     <NavLink
                       to={`/dashboard/edit/${user.id}`}
                       className="btn btn-ghost btn-xs"
