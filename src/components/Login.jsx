@@ -28,7 +28,7 @@ const Login = () => {
     logIn(email, password)
     .then(result =>{
       Swal.fire({
-        position: "top-end",
+        position: "center",
         icon: "success",
         title: "You Have successfully login",
         showConfirmButton: false,
@@ -37,7 +37,15 @@ const Login = () => {
       navigate(from, {replace: true});
     })
     .catch(error =>{
-      console.log(error);
+      // const message = error.message;
+      console.log("Check Your Credentials");
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Check You credentials",
+        showConfirmButton: false,
+        timer: 1500
+      });
     })
   }
 

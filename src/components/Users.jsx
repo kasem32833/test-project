@@ -12,7 +12,7 @@ const Users = () => {
     <div className="">
       <div className="w-[1200px] mx-auto flex justify-around items-center pt-4">
         <h3 className="text-xl mb-2">Our Valuable Customers</h3>
-        <NavLink to="/create" className="bg-stone-900 text-white px-4 py-2  rounded-full">
+        <NavLink to="create" className="bg-stone-900 text-white px-4 py-2  rounded-full">
           +Add New User
         </NavLink>
       </div>
@@ -69,7 +69,7 @@ const Users = () => {
         
         <th>
           <NavLink to="/dashboard/delete" className="btn btn-ghost btn-xs"><ImBin2></ImBin2></NavLink>
-          <NavLink to="/dashboard/edit" className="btn btn-ghost btn-xs"><FiEdit></FiEdit></NavLink>
+          <NavLink to={`/dashboard/edit/${user.id}`} className="btn btn-ghost btn-xs"><FiEdit></FiEdit></NavLink>
         </th>
       </tr>
             ))}
