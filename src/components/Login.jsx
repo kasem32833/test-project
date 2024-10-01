@@ -2,13 +2,17 @@ import {  useContext, useRef } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
 import { FaGoogle } from "react-icons/fa6";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import { useDispatch, useSelector } from "react-redux";
 
 
 
 
 
 const Login = () => {
+
+  const dispatch = useDispatch();
+  const registerdUser = useSelector((state)=>state.auth);
 
   const {logIn, user, googleLogin, loading} = useContext(AuthContext);
 
@@ -24,6 +28,8 @@ const Login = () => {
 
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
+
+    dispatch()
 
     logIn(email, password)
     .then(result =>{

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {data} from "../../components/Data"
+import {data} from "../../components/Data";
 
 
 
@@ -29,11 +29,9 @@ const usersSlice = createSlice({
                 return state.filter(user => user.id !== id )
             }
 
-        }
-
-        
+        },
     }
 })
 
 export default usersSlice.reducer;
-export const {addUser, updateUser, deleteUser} = usersSlice.actions
+export const {addUser, updateUser, deleteUser} = usersSlice.actions 
